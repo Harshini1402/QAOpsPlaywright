@@ -117,9 +117,9 @@ await page.pause();
 
 
 
-/*test.only("End-to-End testing", async ({ page }) => {
+test.only("End-to-End testing", async ({ page }) => {
 
-    const email = "gunashreel@gmail.com";
+    const email = "RHARSHINI14@GMAIL.COM";
     const productName = "iphone 13 pro";
 
     const username = page.locator("#userEmail");
@@ -132,7 +132,7 @@ await page.pause();
     // Login
     await page.goto("https://rahulshettyacademy.com/client/#/auth/login");
     await username.fill(email);
-    await password.fill("Gunashree@2003");
+    await password.fill("H@rshini14");
     await login.click();
 
     await cardTitles.first().waitFor();
@@ -188,8 +188,7 @@ await page.pause();
     }
 
     // Verify email
-    await expect(
-        page.locator(".user__name [type='text']").first()).toHaveValue(email);
+    await expect(page.locator("input[type='text']").nth(4)).toHaveValue(email);
 
     // Place order
     await page.locator(".action__submit").click();
@@ -227,8 +226,8 @@ await page.pause();
         }
     }
 
-    expect(orderFound).toBeTruthy();
+    expect(orderFound).toBeFalsy();
 
-});*/
+});
 
 

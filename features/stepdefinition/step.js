@@ -42,9 +42,7 @@ When('Enter valid details and Place the order', async function () {
 
     await login.selectCountry("India");
 
-    await expect(
-        this.page.locator(".user__name input[type='text']")
-    ).toHaveValue("RHARSHINI14@GMAIL.COM");
+    await expect(this.page.locator(".user__name input[type='text']")).toHaveValue("RHARSHINI14@GMAIL.COM");
 
     orderId = await login.placeYourOrder();
 

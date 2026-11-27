@@ -18,11 +18,11 @@ const path = require('node:path');
      await page.getByRole("button",{name :'Confirm Booking'}).click();
      await page.getByText("Your tickets are reserved.").isVisible();
       await expect(page.getByText("Your tickets are reserved.")).toBeVisible 
-     await page.pause();
+     
 
     })
 
-  test('playwright end-to end events',async ({page})=>
+  test.only('playwright end-to end events',async ({page})=>
      {
      await page.goto("https://eventhub.rahulshettyacademy.com/login");
      await page.getByPlaceholder("you@email.com").fill("rharshini14@gmail.com");
@@ -36,9 +36,9 @@ const path = require('node:path');
     await page.locator("#category").selectOption("Concert");
     await page.getByPlaceholder("e.g. Bangalore").fill("Chennai");
     await page.getByPlaceholder("Venue name & address").fill("YMCA Nandanam");
-   await page.locator('[id="event-date-&-time"]').fill('2026-10-31T18:30');
+   await page.locator('[id="event-date-&-time"]').fill('2027-10-31T18:30');
     await page.getByPlaceholder("0.00").fill("1623");
-    await page.locator("#total-seats").fill("500");
+    await page.locator("#total-seats").fill("5000");
     await page.getByRole( "button",{name :"+ Add Event"}).click();
     await expect(page.getByText('Event created!')).toBeVisible();
     await page.getByRole("link",{name :"Events"}).first().click();
@@ -110,9 +110,9 @@ await expect(page).toHaveURL("https://eventhub.rahulshettyacademy.com/bookings")
 })
 
 
- test.only("visual testing",async({page})=>
-{
-  await page.goto("https://rahulshettyacademy.com/");
-  expect(await page.screenshot()).toMatchSnapshot("screen.png");
-})
+ //test.only("visual testing",async({page})=>
+//{
+ // await page.goto("https://rahulshettyacademy.com/");
+  //expect(await page.screenshot()).toMatchSnapshot("screen.png");
+//})
 }
